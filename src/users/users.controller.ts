@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDTO } from './dto/create.user.dto';
+import { LoginUserDTO } from './dto/login.user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -12,13 +13,10 @@ export class UsersController {
         return await this.usersSevice.create(input)
     }
 
+    @Post('/login')
+    async loginUser(@Body() body: LoginUserDTO){
+        return this.usersSevice.loginUser(body)
 
-    @Get('/test')
-    async getTest(){
-        return 'my code is running fine now'
     }
-
-  
-
 
 }

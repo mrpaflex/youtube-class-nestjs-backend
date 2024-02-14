@@ -14,5 +14,5 @@ export class User {
     password: string
 }
 
-export const UserSchema = SchemaFactory.createForClass(User)///collection users
+export const UserSchema = SchemaFactory.createForClass(User)/// users as collection
 
